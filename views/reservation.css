@@ -62,4 +62,5 @@
 
 .button-form:hover {
     background-color: crimson;
+    border: 1px solid white;
 }

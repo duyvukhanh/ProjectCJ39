@@ -14,7 +14,7 @@ let navbarContent = `
                         <a class="nav-link text-light" href="reservation.html">Reservation</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="#">Booking</a>
+                        <a class="nav-link text-light" href="order.html">Order Now</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-light" href="#">Gallery</a>
@@ -47,8 +47,11 @@ let navbarContent = `
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-light" href="#">
-                            <i class="fas fa-bars"></i>
+                            <i class="fas fa-shopping-cart"></i>
                         </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#">Sign in</a>
                     </li>
                 </ul>
             </div>
@@ -103,15 +106,3 @@ for (const nav of navText) {
 
 
 
-let imgHeight = $('#getH').height();
-let galleryImgs = document.getElementsByClassName("map-area")[0].getElementsByTagName("img");
-
-for (const galleryImg of galleryImgs) {
-    galleryImg.style.height = imgHeight
-}
-
-
-
-function toHomePage() {
-
-}

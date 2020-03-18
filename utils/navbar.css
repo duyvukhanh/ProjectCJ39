@@ -114,7 +114,8 @@ nav>div li {
   
   .sub-input button:hover {
     background-color: crimson;
-    color: #292b2c;
+    border: 1px solid white;
+
   }
   
   .sub-input>div {
