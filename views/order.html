@@ -241,6 +241,32 @@
         <div class="subcribe-area d-flex justify-content-center align-items-center" id="subscribe"></div>
         <div class="contact-area" id="contact"></div>
         <div class="footer d-flex justify-content-center align-items-center" id="footer"></div>
+        <div class="login-form-container w3-animate-opacity" id="loginFormContainer">
+            <div class="login-form" id="loginForm">
+                <div class="button-box">
+                    <div id="btn-group"></div>
+                    <button class="toggle-btn text-light" type="button" id="login-Btn" onclick="toLogin()">Login</button>
+                    <button class="toggle-btn" type="button" id="register-Btn" onclick="toRegister()">Register</button>
+                </div>
+                <form id="loginFormInput" class="input-box d-flex flex-column justify-content-center">
+                    <input type="text" class="input-field" placeholder="Username" required>
+                    <input type="text" class="input-field" placeholder="Password" required>
+                    <div class="d-flex justify-content-around">
+                        <button type="button" class="button-submit">Login</button>
+                        <button type="button" class="button-submit" onclick="closeLoginForm()">Close</button>
+                    </div>
+                </form>
+                <form id="registerFormInput" class="input-box">
+                    <input type="text" class="input-field" placeholder="Username" required>
+                    <input type="text" class="input-field" placeholder="Password" required>
+                    <input type="email" class="input-field" placeholder="Email" required>
+                    <div class="d-flex justify-content-around">
+                        <button type="button" class="button-submit">Register</button>
+                        <button type="button" class="button-submit" onclick="closeLoginForm()">Close</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 
 

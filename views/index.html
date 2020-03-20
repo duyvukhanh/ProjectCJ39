@@ -50,7 +50,7 @@
                             corrupti ratione nam omnis ipsum nulla debitis dolore pariatur cum, deserunt, ex maxime
                             perferendis.</p>
                         <div class="d-flex justify-content-center on-hover"
-                            style="font-family : 'Montserrat', sans-serif; font-size: 18px;">OUR STORY</div>
+                            style="font-family : 'Montserrat', sans-serif; font-size: 18px;" onclick="toOurStory()">OUR STORY</div>
                     </div>
                 </div>
                 <div class="openning-content-2">
@@ -131,11 +131,11 @@
                     <div class="d-flex" style="flex-grow: 2; flex-basis: 0;">
                         <div class="d-flex homepage-menu-item justify-content-center align-items-center"
                             style="flex-grow:1; flex-basis: 0; background-image: url('../image/homepage-menu-lunch.jpg'); ">
-                            <button type="button" class="btn btn-outline-dark">LUNCH</button>
+                            <button type="button" class="btn btn-outline-dark" onclick="toLunchMenu()">LUNCH</button>
                         </div>
                         <div class="d-flex homepage-menu-item justify-content-center align-items-center"
                             style="flex-grow:1; flex-basis: 0; background-image: url('../image/homepage-menu-dinner.jpg');">
-                            <button type="button" class="btn btn-outline-dark">DINNER</button>
+                            <button type="button" class="btn btn-outline-dark" onclick="toDinnerMenu()">DINNER</button>
                         </div>
                     </div>
                     <div class="d-flex homepage-menu-item justify-content-center align-items-center"
@@ -146,15 +146,15 @@
                 <div class=" d-flex" style="flex-grow: 1; flex-direction: column; flex-basis: 0;">
                     <div class="d-flex homepage-menu-item justify-content-center align-items-center"
                         style="flex-grow: 1;flex-basis: 0;  background-image: url('../image/homepage-menu-drink.jpg');">
-                        <button type="button" class="btn btn-outline-dark">DRINK</button>
+                        <button type="button" class="btn btn-outline-dark" onclick="toDrinkMenu()">DRINK</button>
                     </div>
                     <div class="d-flex homepage-menu-item justify-content-center align-items-center"
                         style="flex-grow: 1;flex-basis: 0; background-image: url('../image/homepage-menu-starting.jpg');">
-                        <button type="button" class="btn btn-outline-dark">STARTERS</button>
+                        <button type="button" class="btn btn-outline-dark" onclick="toStartersMenu()">STARTERS</button>
                     </div>
                     <div class="d-flex homepage-menu-item justify-content-center align-items-center"
                         style="flex-grow: 1;flex-basis: 0; background-image: url('../image/homepage-menu-dessert.jpg');">
-                        <button type="button" class="btn btn-outline-dark">DESSERT</button>
+                        <button type="button" class="btn btn-outline-dark" onclick="toDessertMenu()">DESSERT</button>
                     </div>
                 </div>
             </div>
@@ -254,6 +254,43 @@
         <div class="subcribe-area d-flex justify-content-center align-items-center" id="subscribe"></div>
         <div class="contact-area" id="contact"></div>
         <div class="footer d-flex justify-content-center align-items-center" id="footer"></div>
+        <div class="login-form-container w3-animate-opacity" id="loginFormContainer">
+            <div class="login-form" id="loginForm">
+                <div class="button-box">
+                    <div id="btn-group"></div>
+                    <button class="toggle-btn text-light" type="button" id="login-Btn" onclick="toLogin()">Login</button>
+                    <button class="toggle-btn" type="button" id="register-Btn" onclick="toRegister()">Register</button>
+                </div>
+                <form id="loginFormInput" class="input-box d-flex flex-column justify-content-center">
+                    <input type="text" class="input-field" placeholder="Username" required>
+                    <input type="text" class="input-field" placeholder="Password" required>
+                    <div class="d-flex justify-content-around">
+                        <button type="button" class="button-submit">Login</button>
+                        <button type="button" class="button-submit" onclick="closeLoginForm()">Close</button>
+                    </div>
+                </form>
+                <form id="registerFormInput" class="input-box">
+                    <input type="text" class="input-field" placeholder="Username" required>
+                    <input type="text" class="input-field" placeholder="Password" required>
+                    <input type="email" class="input-field" placeholder="Email" required>
+                    <div class="d-flex justify-content-around">
+                        <button type="button" class="button-submit">Register</button>
+                        <button type="button" class="button-submit" onclick="closeLoginForm()">Close</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+
+
+
+        
+
+
+
+
+
     </div>
 
 
@@ -269,6 +306,8 @@
         crossorigin="anonymous"></script>
     <script src="../utils/navbar.js"></script>
     <script src="../utils/footer.js"></script>
+    <script src="index.js"></script>
+
 
 </body>
 

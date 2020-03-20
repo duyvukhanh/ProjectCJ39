@@ -107,7 +107,7 @@
 }
 
 .introduce-area-title {
-  height: 40vh;
+  height: 400px;
   width: 100%;
   background-image: url("../image/homepage-introduce-area-title-bg.jpg");
   background-size: cover;
@@ -116,7 +116,7 @@
 }
 
 .introduce-area-content {
-  height: 70vh;
+  height: 600px;
   width: 70%;
   margin: auto;
   padding-top: 30px ;
@@ -160,13 +160,13 @@
 }
 
 .menu-area-title {
-  height: 30vh;
+  height: 250px;
   width: 100%;
   background-color: rgb(237, 242, 201);
 }
 
 .menu-area {
-  height: 100vh;
+  height: 900px;
   width: 100%;
   margin: auto;
   background-color: rgb(237, 242, 201);
@@ -242,3 +242,8 @@
   color: crimson;
 }
 
+.aTag {
+  text-decoration: none;
+  font-family : 'Montserrat', sans-serif;
+  font-size: 18px;
+}
