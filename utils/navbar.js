@@ -14,7 +14,7 @@ let navbarContent = `
                         <a class="nav-link text-light" href="reservation.html">Reservation</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="order.html">Order Now</a>
+                        <a class="nav-link text-light" href="order.html">Order</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-light" href="about.html">About</a>
@@ -22,7 +22,6 @@ let navbarContent = `
                     <li class="nav-item">
                         <a class="nav-link text-light" href="contact.html">Contact</a>
                     </li>
-
                 </ul>
             </div>
             <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav2">
@@ -90,7 +89,7 @@ let navbarContent = `
                     </div>
                 </div>
                 <div class="cart-order-btn d-flex justify-content-center">
-                    <button type="button" class="btn btn-dark">Dark</button>
+                    <button type="button" class="btn btn-dark" onclick="toCheckoutPage()">Check Out.</button>
                 </div>
             </div>
         </div>
@@ -180,7 +179,6 @@ $(document).ready(function()
 {
     $('.login-form').hover(function(){ 
         mouse_is_inside=true; 
-        console.log("inside")
     }, function(){ 
         mouse_is_inside=false; 
     });
@@ -191,6 +189,10 @@ $(document).ready(function()
         }
     });
 });
+
+
+
+
 
 
 
@@ -214,3 +216,6 @@ function toLogin() {
 }
 
 
+function toCheckoutPage() {
+    window.location.href = "checkout.html"
+}
