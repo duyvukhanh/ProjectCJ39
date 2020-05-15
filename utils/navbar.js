@@ -96,7 +96,10 @@ let navbarContent = `
 `
 
 
+
+
 document.getElementById("navbar").innerHTML = navbarContent;
+
 
 document.getElementById("loginBtn").addEventListener("click",function(e){
     e.preventDefault();

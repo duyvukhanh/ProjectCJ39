@@ -116,10 +116,24 @@
 }
 
 .introduce-area-content {
-  height: 600px;
+  /* height: 600px; */
   width: 70%;
   margin: auto;
-  padding-top: 30px ;
+  padding-top: 40px ;
+  /* padding-bottom: 40px; */
+}
+
+.introduce-area-card {
+  position: relative;
+}
+
+.learn-more {
+  position: absolute;
+  bottom: 30px;
+}
+
+.introduce-area-content-1, .introduce-area-content-2, .introduce-area-content-3 {
+  height: 500px;
 }
 
 .introduce-area-card {
