@@ -93,6 +93,40 @@ let navbarContent = `
                 </div>
             </div>
         </div>
+
+
+        <div class="login-form-container w3-animate-opacity" id="loginFormContainer">
+            <div class="login-form" id="loginForm">
+                <div class="button-box">
+                    <div id="btn-group"></div>
+                    <button class="toggle-btn text-light" type="button" id="login-Btn" onclick="toLogin()">Login</button>
+                    <button class="toggle-btn" type="button" id="register-Btn" onclick="toRegister()">Register</button>
+                </div>
+                <form id="loginFormInput" class="input-box d-flex flex-column justify-content-center">
+                    <div class="alert alert-danger" role="alert" id="loginErrorAlert">
+                        This is a danger alert—check it out!
+                    </div>
+                    <input type="text" class="input-field" placeholder="Email" required id="loginForm-email">
+                    <input type="password" class="input-field" placeholder="Password" required id="loginForm-password">
+                    <div class="d-flex justify-content-around">
+                        <button type="button" class="button-submit" onclick="login()">Login</button>
+                        <button type="button" class="button-submit" onclick="closeLoginForm()">Close</button>
+                    </div>
+                </form>
+                <form id="registerFormInput" class="input-box">
+                    <div class="alert alert-danger" role="alert"  id="registerErrorAlert">
+                        This is a danger alert—check it out!
+                    </div>
+                    <input type="text" class="input-field" placeholder="Email" required id="registerForm-email">
+                    <input type="password" class="input-field" placeholder="Password" required id="registerForm-password">
+                    <input type="text" class="input-field" placeholder="Display Name" required  id="registerForm-displayName">
+                    <div class="d-flex justify-content-around">
+                        <button type="button" class="button-submit" onclick="register()">Register</button>
+                        <button type="button" class="button-submit" onclick="closeLoginForm()">Close</button>
+                    </div>
+                </form>
+            </div>
+        </div>
 `
 
 
@@ -221,4 +255,58 @@ function toLogin() {
 
 function toCheckoutPage() {
     window.location.href = "checkout.html"
+}
+
+function validateEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
+
+function validatePassword(password) {
+    if (password.length <= 6 || password.length >= 20) {
+        return false
+    }
+    return true
+}
+
+function validateDisplayName(displayName) {
+    if (displayName.length <= 3 || displayName.length >= 20) {
+        return false
+    }
+    return true
+}
+
+async function register() {
+    let email = document.getElementById("registerForm-email").value
+    let password = document.getElementById("registerForm-password").value
+    let displayName = document.getElementById("registerForm-displayName").value
+
+    let error = {}
+    if (!validateEmail(email)) {
+        error.email = "Email not available"
+    }
+    if (!validatePassword(password)) {
+        error.password = "password phai tu 6-20 ky tu"
+    }
+    if (!validateDisplayName(displayName)) {
+        error.displayName = "displayName phai tu 3-20 ky tu"
+    }
+    console.log(error)
+    if ( !jQuery.isEmptyObject(error) ) {
+        document.getElementById("registerErrorAlert").style.display = "block";
+        for (let e in error) {
+            document.getElementById("registerErrorAlert").innerHTML = error[e]
+            break
+        }
+        console.log("not register")
+    }
+    if ( jQuery.isEmptyObject(error) ) {
+        await DB.collection("users").add({
+           email : email,
+           password : password,
+           displayName : displayName,
+           isAdmin : false
+        })
+        console.log("done")
+    }
 }
